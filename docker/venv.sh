@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-VENV_DIR=/src/.venv-docker
+VENV_DIR=/.venv-docker
 FORCE_VENV=0
 
 if [[ 1 -eq ${FORCE_VENV} ]] || [[ ! -d ${VENV_DIR} ]] || [[ ! -f ${VENV_DIR}/bin/activate ]]; then
