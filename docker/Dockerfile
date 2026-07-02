@@ -9,9 +9,9 @@ FROM ghcr.io/pulp-platform/snitch_cluster:main AS builder
 # If the repo URL or commit hash doesn't change, this layer remains cached.
 RUN git config --global url."https://github".insteadOf "git://github" \
    && git config --global url."https://github.com/".insteadOf "git@github.com:" \
-   && git clone --recursive https://github.com/pulp-platform/snitch_cluster /repo \
+   && git clone --recursive https://github.com/engibengi/snitch-cluster-thesis /repo \
    && cd /repo \
-   && git reset --hard 7f430f2 \
+   # && git reset --hard 7f430f2 \
    # Build the verilator model and software in the same layer
    && make -C target/snitch_cluster verilator \
    && make -C target/snitch_cluster DEBUG=ON sw \
